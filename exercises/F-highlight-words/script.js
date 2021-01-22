@@ -1,5 +1,26 @@
 function highlightWords(paragraph, colours) {
-  // Write your code here...
+  let content = document.querySelector("#content");
+  let select = document.createElement("select");
+  let pea = document.createElement("h1");
+  colours.forEach(element => {
+    let option = document.createElement("option");
+    option.value = element;
+    option.innerText = element;
+    select.appendChild(option);
+select.addEventListener("click", event =>{
+      event.preventDefault();
+      console.log(event.target.value);
+      if(event.target.value === element){
+       pea.innerHTML = `${paragraph}`
+   
+      }
+    
+    })
+
+  })
+content.appendChild(pea);
+  content.appendChild(select);
+     
 }
 
 const paragraph =
@@ -8,3 +29,18 @@ const paragraph =
 const colours = ["yellow", "green", "blue", "none"];
 
 highlightWords(paragraph, colours);
+
+// let wordsArr = paragraph.split(' ');// changes the paragraph into an array
+// for(let i =0; i < wordsArr.length; i++) {
+//     let span = document.createElement('span');
+//     span.innerHTML = `${wordsArr[i]} `;
+//     span.addEventListener("click", function (e) {
+//       e.target.style.backgroundColor = selectBox.value;
+//     })
+//     pGraph.appendChild(span);
+// }
+
+
+// document.getElementById('content').appendChild(selectBox);//this adds the select box to the document
+// document.getElementById("content").appendChild(pGraph);
+// }
