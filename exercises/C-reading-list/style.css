@@ -90,6 +90,31 @@ body {
   background: #ce5f31;
 }
 
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: calc(100%-41px);
+}
+
+li {
+  display: list-item;
+  padding: 10px;
+  margin: 15px;
+  width: calc(25%-51px);
+  min-width: 350px;
+  text-align: -webkit-match-parent;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
 /* Article */
 .article {
   margin-bottom: 2em;
