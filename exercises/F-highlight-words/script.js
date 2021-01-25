@@ -1,27 +1,54 @@
 function highlightWords(paragraph, colours) {
   let content = document.querySelector("#content");
   let select = document.createElement("select");
-  let pea = document.createElement("h3");
-  colours.forEach(element => {
+  let pea = document.createElement("p");
+  let para = paragraph.split(' ');
+   colours.forEach(element => {
     let option = document.createElement("option");
     option.value = element;
     option.innerText = element;
     select.appendChild(option);
-select.addEventListener("click", event =>{
-      event.preventDefault();
-      console.log(event.target.value);
-      if(event.target.value === element){
-       pea.innerHTML = `${paragraph}`
-        
+   })
+  para.forEach((info) => {
+    let words = document.createElement("span")
+    words.innerText = ` ${info}`
+    pea.appendChild(words);
+    // console.log(info);
+    words.addEventListener("click", e =>{
+      if(select.value === "yellow"){
+        words.style.backgroundColor = "yellow"
+      } else if (select.value ===  "green"){
+        words.style.backgroundColor = "green"
+      } else if (select.value === "blue"){
+        words.style.backgroundColor = "blue"
+      // } else {
+      //   words.style.backgroundColor = "none"
       }
-    
     })
-
   })
+  
+  
+
+//   colours.forEach(element => {
+//     let option = document.createElement("option");
+//     option.value = element;
+//     option.innerText = element;
+//     select.appendChild(option);
+// select.addEventListener("click", event =>{
+//       event.preventDefault();
+//       console.log(event.target.value);
+//       if(event.target.value === element){
+//        pea.innerHTML = `${paragraph}`
+        
+//       }
+    
+//     })
+
+  // })
 content.appendChild(pea);
   content.appendChild(select);
     
-}
+ }
  
 
 const paragraph =
